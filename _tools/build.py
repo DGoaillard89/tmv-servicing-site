@@ -240,10 +240,23 @@ def post_card(post, prefix):
           </a>"""
 
 
-def related_block(posts, prefix, tag, heading="Related articles", exclude=None, limit=3):
-    chosen = [p for p in posts if tag in p.get("tags", []) and p["slug"] != exclude]
-    others = [p for p in posts if p not in chosen and p["slug"] != exclude]
-    chosen = (chosen + others)[:limit]
+def related_block(posts, prefix, tag, heading="Related articles", exclude=None, limit=3, tags=None):
+    """Pick the best-matching posts from the full set.
+
+    Score: 3 if the post's primary tag is the wanted tag, +1 for every other
+    shared tag. Ties go to the newest post. Posts that share nothing fill any
+    remaining slots, newest first.
+    """
+    wanted = tags or [tag]
+
+    def score(p):
+        ptags = p.get("tags", [])
+        s = 3 if ptags and ptags[0] == wanted[0] else 0
+        s += sum(1 for t in ptags if t in wanted)
+        return s
+
+    pool = [p for p in posts if p["slug"] != exclude]  # posts are newest first
+    chosen = sorted(pool, key=lambda p: -score(p))[:limit]
     if not chosen:
         return ""
     cards = "\n          ".join(post_card(p, prefix) for p in chosen)
@@ -419,7 +432,8 @@ def main():
         m_body = post_body(m, posts)
         # related block for posts: same tag, excluding itself
         m_body = re.sub(r"\{\{related:(\w+):([\w-]+)\}\}",
-                        lambda x: related_block(posts, "../", x.group(1), "Keep reading", exclude=x.group(2)), m_body)
+                        lambda x: related_block(posts, "../", x.group(1), "Keep reading", exclude=x.group(2),
+                                                tags=m.get("tags")), m_body)
         m2 = dict(m, body=m_body)
         (ROOT / m["out"]).write_text(render(m2, posts))
         print(f"post {m['slug']}: {m['words']} words")
