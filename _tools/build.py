@@ -26,7 +26,6 @@ FONTS = "https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=So
 LOGO_MARK = (
     '<svg viewBox="0 0 48 48"><path class="logo__cold" d="M11.01 33.5A15 15 0 0 1 20.12 11.51" />'
     '<path class="logo__hot" d="M27.88 11.51A15 15 0 0 1 36.99 33.5" />'
-    '<path class="logo__set" d="M24 3.6v3.4" />'
     '<path class="logo__needle" d="M24 26V14.2" /><circle class="logo__hub" cx="24" cy="26" r="4.4" />'
     '<circle class="logo__pin" cx="24" cy="26" r="1.6" /></svg>'
 )
