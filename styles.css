@@ -805,3 +805,7 @@ body.modal-open { overflow: hidden; }
 .hero__grid > *, .split > *, .coverage > *, .page-hero .wrap > *, .post-layout > * { min-width: 0; }
 .gauge__needle { transform: rotate(var(--angle, 0deg)); }
 @media (max-width: 680px) { .register td { white-space: normal; } .register th, .register td { padding: 10px 8px; } }
+.faq-group { margin: 56px 0 12px; font-size: 1.4rem; }
+.faq-group:first-child { margin-top: 0; }
+.checklist a, .lede a { color: var(--cold-strong); }
+.on-dark .lede a { color: var(--white); }

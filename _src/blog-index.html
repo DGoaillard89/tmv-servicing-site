@@ -1,0 +1,51 @@
+<!--meta
+{
+  "out": "blog/index.html",
+  "url": "/blog/",
+  "prefix": "../",
+  "nav": "blog",
+  "title": "TMV Advice &amp; Guides | TMV Servicing Blog",
+  "description": "Practical advice on thermostatic mixing valves: servicing intervals, TMV2 vs TMV3, fail-safe tests, temperatures, records and compliance.",
+  "crumbs": [["Home", "/"], ["Advice", "/blog/"]],
+  "schemas": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "TMV Servicing advice",
+      "url": "https://tmv-servicing.com/blog/",
+      "publisher": { "@type": "Organization", "name": "TMV Servicing", "url": "https://tmv-servicing.com/" }
+    }
+  ]
+}
+-->
+    <section class="page-hero on-dark">
+      <div class="wrap">
+        <div>
+          {{crumbs}}
+          <span class="eyebrow">Advice</span>
+          <h1>TMV advice and guides</h1>
+          <p class="page-hero__lede">Straightforward articles about thermostatic mixing valves: how they work, how often to test them and how to keep your records in order.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <ol class="post-list" reversed>
+{{post_list}}
+        </ol>
+      </div>
+    </section>
+
+    <section class="cta-band on-dark">
+      <div class="wrap">
+        <div>
+          <h2>Rather just talk to someone?</h2>
+          <p>Give us a ring. We're happy to answer questions about your valves, even if you're not ready to book.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn--hot" type="button" data-open-enquiry>Get in touch</button>
+          <a class="btn btn--light" href="{{TEL}}">Call {{PHONE}}</a>
+        </div>
+      </div>
+    </section>
