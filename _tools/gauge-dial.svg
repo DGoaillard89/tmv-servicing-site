@@ -1,0 +1,43 @@
+<defs><linearGradient id="gcold" x1="0" x2="1" y1="1" y2="0"><stop offset="0" stop-color="#1f4f88"/><stop offset="1" stop-color="#9fbbdc"/></linearGradient><linearGradient id="ghot" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#eebd9c"/><stop offset="1" stop-color="#c4531c"/></linearGradient></defs>
+<path class="gauge__track" d="M40.0 210.0A160 160 0 0 1 360.0 210.0" />
+<path d="M40.0 210.0A160 160 0 0 1 179.9 51.3" fill="none" stroke="url(#gcold)" stroke-width="22" />
+<path d="M252.6 58.9A160 160 0 0 1 360.0 210.0" fill="none" stroke="url(#ghot)" stroke-width="22" />
+<path d="M186.6 50.6A160 160 0 0 1 246.2 56.8" fill="none" stroke="#13202c" stroke-width="22" />
+<path class="gauge__major" d="M60.0 210.0L76.0 210.0" />
+<text class="gauge__label" x="94.0" y="214.0" text-anchor="middle">10°</text>
+<path class="gauge__minor" d="M60.8 195.4L68.7 196.2" />
+<path class="gauge__minor" d="M63.1 180.9L70.9 182.6" />
+<path class="gauge__minor" d="M66.9 166.7L74.5 169.2" />
+<path class="gauge__minor" d="M72.1 153.1L79.4 156.3" />
+<path class="gauge__major" d="M78.8 140.0L92.6 148.0" />
+<text class="gauge__label" x="108.2" y="161.0" text-anchor="middle">20°</text>
+<path class="gauge__minor" d="M86.7 127.7L93.2 132.4" />
+<path class="gauge__minor" d="M96.0 116.3L101.9 121.7" />
+<path class="gauge__minor" d="M106.3 106.0L111.7 111.9" />
+<path class="gauge__minor" d="M117.7 96.7L122.4 103.2" />
+<path class="gauge__major" d="M130.0 88.8L138.0 102.6" />
+<text class="gauge__label" x="147.0" y="122.2" text-anchor="middle">30°</text>
+<path class="gauge__minor" d="M143.1 82.1L146.3 89.4" />
+<path class="gauge__minor" d="M156.7 76.9L159.2 84.5" />
+<path class="gauge__minor" d="M170.9 73.1L172.6 80.9" />
+<path class="gauge__minor" d="M185.4 70.8L186.2 78.7" />
+<path class="gauge__major" d="M200.0 70.0L200.0 86.0" />
+<text class="gauge__label" x="200.0" y="108.0" text-anchor="middle">40°</text>
+<path class="gauge__minor" d="M214.6 70.8L213.8 78.7" />
+<path class="gauge__minor" d="M229.1 73.1L227.4 80.9" />
+<path class="gauge__minor" d="M243.3 76.9L240.8 84.5" />
+<path class="gauge__minor" d="M256.9 82.1L253.7 89.4" />
+<path class="gauge__major" d="M270.0 88.8L262.0 102.6" />
+<text class="gauge__label" x="253.0" y="122.2" text-anchor="middle">50°</text>
+<path class="gauge__minor" d="M282.3 96.7L277.6 103.2" />
+<path class="gauge__minor" d="M293.7 106.0L288.3 111.9" />
+<path class="gauge__minor" d="M304.0 116.3L298.1 121.7" />
+<path class="gauge__minor" d="M313.3 127.7L306.8 132.4" />
+<path class="gauge__major" d="M321.2 140.0L307.4 148.0" />
+<text class="gauge__label" x="291.8" y="161.0" text-anchor="middle">60°</text>
+<path class="gauge__minor" d="M327.9 153.1L320.6 156.3" />
+<path class="gauge__minor" d="M333.1 166.7L325.5 169.2" />
+<path class="gauge__minor" d="M336.9 180.9L329.1 182.6" />
+<path class="gauge__minor" d="M339.2 195.4L331.3 196.2" />
+<path class="gauge__major" d="M340.0 210.0L324.0 210.0" />
+<text class="gauge__label" x="306.0" y="214.0" text-anchor="middle">70°</text>

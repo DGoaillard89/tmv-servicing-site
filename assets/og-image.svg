@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="scale" x1="0" x2="1">
+      <stop offset="0" stop-color="#2b64a8"/>
+      <stop offset="0.46" stop-color="#b9cbe0"/>
+      <stop offset="0.5" stop-color="#ece6dc"/>
+      <stop offset="0.54" stop-color="#ecc2a4"/>
+      <stop offset="1" stop-color="#c4531c"/>
+    </linearGradient>
+    <pattern id="ticks" width="16" height="40" patternUnits="userSpaceOnUse"><rect x="14" width="2" height="40" fill="#13202c"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#13202c"/>
+  <g transform="translate(96 150) scale(6.4)">
+    <path d="M11.01 33.5A15 15 0 0 1 20.12 11.51" fill="none" stroke="#5b93d6" stroke-width="5" stroke-linecap="round"/>
+    <path d="M27.88 11.51A15 15 0 0 1 36.99 33.5" fill="none" stroke="#e7783a" stroke-width="5" stroke-linecap="round"/>
+    <path d="M24 26V14.2" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/>
+    <circle cx="24" cy="26" r="4.4" fill="#fff"/>
+    <circle cx="24" cy="26" r="1.6" fill="#13202c"/>
+  </g>
+  <text x="470" y="250" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="92" font-weight="800" fill="#fff" letter-spacing="-2">TMV<tspan font-weight="500" fill="#c9d3dc"> Servicing</tspan></text>
+  <text x="472" y="318" font-family="IBM Plex Sans, Helvetica, Arial, sans-serif" font-size="34" fill="#c9d3dc">Thermostatic mixing valve testing,</text>
+  <text x="472" y="362" font-family="IBM Plex Sans, Helvetica, Arial, sans-serif" font-size="34" fill="#c9d3dc">servicing and installation. Nationwide.</text>
+  <text x="472" y="440" font-family="IBM Plex Mono, Menlo, monospace" font-size="30" font-weight="500" fill="#e7783a">020 3633 6064</text>
+  <rect x="0" y="560" width="1200" height="70" fill="url(#scale)"/>
+  <rect x="0" y="560" width="1200" height="70" fill="url(#ticks)" opacity="0.18"/>
+</svg>
