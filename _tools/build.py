@@ -118,6 +118,7 @@ def head(meta, prefix, schemas):
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.classList.add("js")</script>
   <title>{t}</title>
   <meta name="description" content="{d}" />{robots}
   <link rel="canonical" href="{url}" />

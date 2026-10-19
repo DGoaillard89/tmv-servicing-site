@@ -236,7 +236,12 @@ strong, b { font-weight: 600; }
 .gauge__minor { stroke: #b4bcc4; stroke-width: 2; }
 .gauge__major { stroke: var(--ink); stroke-width: 2.5; }
 .gauge__label { font-family: var(--font-mono); font-size: 13px; fill: var(--muted); }
-.gauge__needle { stroke: var(--ink); stroke-width: 7; stroke-linecap: round; transform-origin: 200px 210px; animation: settle 1.6s cubic-bezier(0.34, 1.4, 0.5, 1) both; }
+.gauge__needle { stroke: var(--ink); stroke-width: 7; stroke-linecap: round; transform-origin: 200px 210px; transform: rotate(var(--angle, 0deg)); }
+/* The needle rests at its reading by default (no JS, reduced motion, screenshots).
+   The swing-in only runs once the inline head script has added .js. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .gauge__needle { animation: settle 1.6s cubic-bezier(0.34, 1.4, 0.5, 1) both; }
+}
 .gauge__readout { font-family: var(--font-mono); font-size: 52px; font-weight: 500; fill: var(--ink); letter-spacing: -2px; }
 .gauge__caption { font-family: var(--font-head); font-size: 14px; font-weight: 600; fill: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; }
 
@@ -653,11 +658,10 @@ body.modal-open { overflow: hidden; }
 @keyframes pop { from { opacity: 0; transform: translateY(14px) scale(0.98); } to { opacity: 1; transform: none; } }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes spin { to { transform: rotate(360deg); } }
-@keyframes settle { from { transform: rotate(-110deg); } to { transform: rotate(var(--angle, -12deg)); } }
+@keyframes settle { from { transform: rotate(-110deg); } to { transform: rotate(var(--angle, 0deg)); } }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-  .gauge__needle { transform: rotate(var(--angle, -12deg)); }
 }
 
 /* ---------- Responsive ---------- */
@@ -803,7 +807,6 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 1280px) { .nav a { padding: 8px 8px; font-size: 0.92rem; } .site-header .wrap { gap: 16px; } }
 @media (max-width: 680px) { .scale__pin span { font-size: 0.74rem; } .scale__pin b { font-size: 0.9rem; } }
 .hero__grid > *, .split > *, .coverage > *, .page-hero .wrap > *, .post-layout > * { min-width: 0; }
-.gauge__needle { transform: rotate(var(--angle, 0deg)); }
 @media (max-width: 680px) { .register td { white-space: normal; } .register th, .register td { padding: 10px 8px; } }
 .faq-group { margin: 56px 0 12px; font-size: 1.4rem; }
 .faq-group:first-child { margin-top: 0; }
