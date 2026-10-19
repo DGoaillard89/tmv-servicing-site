@@ -233,7 +233,7 @@ def footer(prefix):
 def post_card(post, prefix):
     return f"""<a class="post-card" href="{prefix}blog/{post['slug']}.html">
             <time datetime="{post['date']}">{nice_date(post['date'])}</time>
-            <h3>{post['title']}</h3>
+            <h3>{post['title_h1']}</h3>
             <p>{post['excerpt']}</p>
             <span class="link-arrow">Read the article {icon('arrow', prefix)}</span>
           </a>"""
@@ -284,7 +284,7 @@ def expand(body, posts, prefix, meta):
     body = body.replace("{{latest_posts}}", related_block(posts, prefix, "__none__", "Latest advice"))
     if "{{post_list}}" in body:
         items = "\n".join(
-            f"""          <li><a href="{p['slug']}.html"><time datetime="{p['date']}">{nice_date(p['date'])}</time><h2>{p['title']}</h2><p>{p['excerpt']}</p></a></li>"""
+            f"""          <li><a href="{p['slug']}.html"><time datetime="{p['date']}">{nice_date(p['date'])}</time><h2>{p['title_h1']}</h2><p>{p['excerpt']}</p></a></li>"""
             for p in posts)
         body = body.replace("{{post_list}}", items)
     return body
