@@ -809,3 +809,4 @@ body.modal-open { overflow: hidden; }
 .faq-group:first-child { margin-top: 0; }
 .checklist a, .lede a { color: var(--cold-strong); }
 .on-dark .lede a { color: var(--white); }
+@media (max-width: 680px) { .temp-chip::before { display: none; } .data-table td.temp { font-size: 0.95rem; } }
