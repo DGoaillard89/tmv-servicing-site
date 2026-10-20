@@ -48,6 +48,7 @@ SERVICE_LINKS = {
     "registers": ("asset-registers.html", "Asset registers &amp; reminders", "register"),
     "faqs": ("faqs.html", "TMV FAQs", "book"),
     "process": ("process.html", "How it works", "calendar"),
+    "guide": ("htm-04-01-tmv-testing.html", "HTM 04-01 &amp; D 08 testing guide", "book"),
 }
 
 
@@ -198,11 +199,13 @@ def footer(prefix):
             <li><a href="{p}tmv-installation.html">Installation &amp; replacement</a></li>
             <li><a href="{p}tmv-compliance.html">TMV compliance</a></li>
             <li><a href="{p}asset-registers.html">Asset registers &amp; reminders</a></li>
+            <li><a href="{p}htm-04-01-tmv-testing.html">HTM 04-01 &amp; D 08 testing guide</a></li>
           </ul>
         </div>
         <div>
           <h4>Company</h4>
           <ul>
+            <li><a href="{p}about.html">About us</a></li>
             <li><a href="{p}sectors.html">Sectors</a></li>
             <li><a href="{p}process.html">How it works</a></li>
             <li><a href="{p}faqs.html">FAQs</a></li>
@@ -218,12 +221,18 @@ def footer(prefix):
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span data-year>2026</span> {BRAND}. All rights reserved.</p>
+        <p>&copy; <span data-year>2026</span> {BRAND}. All rights reserved. <button class="footer-cookie" type="button" data-cookie-settings hidden>Cookie settings</button></p>
         <p>Nationwide TMV servicing, specialising in London &amp; the Home Counties.</p>
       </div>
     </div>
   </footer>
 
+  <div class="mobile-bar">
+    <a href="{TEL}">{icon('phone', p)} Call us</a>
+    <button type="button" data-open-enquiry>Get a quote</button>
+  </div>
+
+  <script src="{p}consent.js" defer></script>
   <script src="{p}script.js" defer></script>
   <script src="{p}enquiry.js" defer></script>
 </body>

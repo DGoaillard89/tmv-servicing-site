@@ -1,0 +1,73 @@
+<!--meta
+{
+  "out": "about.html",
+  "url": "/about.html",
+  "nav": "about",
+  "title": "About TMV Servicing | Thermostatic Mixing Valve Specialists",
+  "description": "Who we are: a Chiswick-based team servicing, testing and installing TMVs across the UK, working to HTM 04-01, D 08, ACOP L8 and HSG274.",
+  "crumbs": [["Home", "/"], ["About us", "/about.html"]],
+  "schemas": [
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About TMV Servicing",
+      "url": "https://tmv-servicing.com/about.html",
+      "about": {"@id": "https://tmv-servicing.com/#business"}
+    }
+  ]
+}
+-->
+    <section class="page-hero on-dark">
+      <div class="wrap">
+        <div>
+          {{crumbs}}
+          <span class="eyebrow">About us</span>
+          <h1>We look after thermostatic mixing valves. That's the job.</h1>
+          <p class="page-hero__lede">TMV Servicing is a specialist team based in Chiswick, west London. We test, service, repair, replace and keep records for TMVs in buildings where hot water safety really matters.</p>
+        </div>
+        <ul class="glance" aria-label="At a glance">
+          <li><span>Based in</span><b>Chiswick, W4</b></li>
+          <li><span>Coverage</span><b>UK-wide</b></li>
+          <li><span>Speciality</span><b>London &amp; Home Counties</b></li>
+          <li><span>Phone</span><b>{{PHONE}}</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="prose">
+          <h2>What we do</h2>
+          <p>TMVs are small, fiddly and easy to forget about until one sends out water that's too hot, or a resident complains the shower's gone cold. We spend our days on them: <a href="tmv-servicing.html">servicing and in-service testing</a>, <a href="tmv-installation.html">installing and replacing valves</a>, and building <a href="asset-registers.html">asset registers</a> so you know where every valve is and when it's next due.</p>
+          <p>Most of our work is for care homes, healthcare buildings, schools and nurseries, housing providers, hotels and leisure sites. You can read more about the <a href="sectors.html">sectors we work in</a>.</p>
+
+          <h2>How we work</h2>
+          <p>We measure rather than guess. Every valve gets its supply and mixed temperatures recorded with a calibrated thermometer, a fail-safe test and a check of its strainers. If something needs more than a service, we explain why and agree the price before doing it. You get the readings, a certificate and an updated register after every visit. The step-by-step version is on our <a href="process.html">how it works</a> page.</p>
+
+          <h2>The guidance we work to</h2>
+          <p>We follow the test method in Chapter 11 of the <a href="https://www.england.nhs.uk/wp-content/uploads/2021/05/Health_tech_memo_0401_supp_D08.pdf" rel="noopener">HTM 04-01 D 08 supplement</a> and the operational guidance in <a href="https://www.england.nhs.uk/wp-content/uploads/2021/05/DH_HTM_0401_PART_B_acc.pdf" rel="noopener">HTM 04-01 Part B</a>. We also work to HSE's <a href="https://www.hse.gov.uk/pubns/books/l8.htm" rel="noopener">ACOP L8</a> and <a href="https://www.hse.gov.uk/pubns/books/hsg274.htm" rel="noopener">HSG274 Part 2</a> for Legionella control, and HSE's <a href="https://www.hse.gov.uk/pubns/hsis6.htm" rel="noopener">guidance on hot water in health and social care</a>. Where your site has its own written scheme or Water Safety Group requirements, those come first. Our <a href="htm-04-01-tmv-testing.html">HTM 04-01 and D 08 guide</a> explains it all in plain English.</p>
+
+          <h2>Where we work</h2>
+          <p>We cover the whole of the UK. Being based in Chiswick means London and the Home Counties are home turf, and that's where we do most of our work. For sites further afield we plan visits so a trip covers as much as possible.</p>
+          <p>If you're only in London, our sister brand <a href="https://tmvservicing.london/" rel="noopener">TMV Servicing London</a> is set up just for the capital.</p>
+
+          <h2>Get in touch</h2>
+          <p>Ring us on <a href="{{TEL}}">{{PHONE}}</a> or use the quote form and tell us roughly what you've got. Our office is at The Lightbox G16, 111 Power Road, Chiswick, London W4 5PY.</p>
+        </div>
+      </div>
+    </section>
+
+    {{related:compliance}}
+
+    <section class="cta-band on-dark">
+      <div class="wrap">
+        <div>
+          <h2>Got TMVs that need a look?</h2>
+          <p>Tell us about your building and roughly how many valves you have. We'll come back with a fixed quote.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn--hot" type="button" data-open-enquiry>Get a quote</button>
+          <a class="btn btn--light" href="{{TEL}}">Call {{PHONE}}</a>
+        </div>
+      </div>
+    </section>

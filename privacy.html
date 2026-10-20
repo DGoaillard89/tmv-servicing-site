@@ -109,8 +109,15 @@
           <h2>Where it's stored</h2>
           <p>Enquiries are passed securely through Cloudflare and stored in our customer records system, Airtable. These providers process data on our behalf under their own data protection terms.</p>
 
-          <h2>Cookies and third parties</h2>
-          <p>This site doesn't use tracking or advertising cookies. Fonts are loaded from Google Fonts, which means your browser connects to Google's servers and shares your IP address with them, as it does for most websites.</p>
+          <h2 id="cookies">Cookies and similar technologies</h2>
+          <p>We only use analytics and advertising cookies if you say yes. When you first visit, a banner asks whether you're happy for us to use:</p>
+          <ul>
+            <li><strong>Analytics</strong>: Google Analytics, so we can count visits and see which pages are useful.</li>
+            <li><strong>Advertising</strong>: Google Ads, so we can measure whether our adverts lead to enquiries and show our ads to people who've visited this site before.</li>
+          </ul>
+          <p>Both are loaded through Google Tag Manager, and none of them load until you accept. If you reject, or ignore the banner, they stay off. Your choice is saved in your browser (local storage) so we don't ask on every page. You can change your mind at any time with the "Cookie settings" link at the bottom of every page. Google explains how it uses information from sites like ours at <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">policies.google.com/technologies/partner-sites</a>.</p>
+          <p>If you reach us from an advert or a tagged link, the web address can include campaign tags (such as a Google click ID or "utm" labels). We add those to your enquiry so we know which advert or link brought you here. With your consent, they're also kept in your browser for the rest of that visit.</p>
+          <p>Fonts are loaded from Google Fonts, which means your browser connects to Google's servers and shares your IP address with them, as it does for most websites.</p>
 
           <h2>How long we keep it</h2>
           <p>If you don't become a customer, we delete enquiry details within 24 months. Customer records are kept for as long as we need them for legal, insurance and compliance reasons.</p>
@@ -139,11 +146,13 @@
             <li><a href="tmv-installation.html">Installation &amp; replacement</a></li>
             <li><a href="tmv-compliance.html">TMV compliance</a></li>
             <li><a href="asset-registers.html">Asset registers &amp; reminders</a></li>
+            <li><a href="htm-04-01-tmv-testing.html">HTM 04-01 &amp; D 08 testing guide</a></li>
           </ul>
         </div>
         <div>
           <h4>Company</h4>
           <ul>
+            <li><a href="about.html">About us</a></li>
             <li><a href="sectors.html">Sectors</a></li>
             <li><a href="process.html">How it works</a></li>
             <li><a href="faqs.html">FAQs</a></li>
@@ -159,12 +168,18 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span data-year>2026</span> TMV Servicing. All rights reserved.</p>
+        <p>&copy; <span data-year>2026</span> TMV Servicing. All rights reserved. <button class="footer-cookie" type="button" data-cookie-settings hidden>Cookie settings</button></p>
         <p>Nationwide TMV servicing, specialising in London &amp; the Home Counties.</p>
       </div>
     </div>
   </footer>
 
+  <div class="mobile-bar">
+    <a href="tel:+442036336064"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#phone" /></svg> Call us</a>
+    <button type="button" data-open-enquiry>Get a quote</button>
+  </div>
+
+  <script src="consent.js" defer></script>
   <script src="script.js" defer></script>
   <script src="enquiry.js" defer></script>
 </body>
