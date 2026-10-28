@@ -18,7 +18,10 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "_src"
 DOMAIN = "https://tmv-servicing.com"
 BRAND = "TMV Servicing"
-TODAY = date.today().isoformat()
+# Default sitemap <lastmod> for pages. Bump this when you change pages site-wide;
+# a page can override it with "lastmod" in its meta. (Fixed, so a rebuild on
+# another day doesn't pretend every page changed.)
+TODAY = "2026-10-28"
 PHONE = "020 3633 6064"
 TEL = "tel:+442036336064"
 FONTS = "https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Sora:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
@@ -207,6 +210,7 @@ def footer(prefix):
           <ul>
             <li><a href="{p}about.html">About us</a></li>
             <li><a href="{p}sectors.html">Sectors</a></li>
+            <li><a href="{p}areas/">Areas we cover</a></li>
             <li><a href="{p}process.html">How it works</a></li>
             <li><a href="{p}faqs.html">FAQs</a></li>
             <li><a href="{p}blog/">Advice &amp; blog</a></li>
@@ -303,6 +307,14 @@ def expand(body, posts, prefix, meta):
     body = body.replace("{{P}}", prefix)
     body = re.sub(r"\{\{icon:([\w-]+)\}\}", lambda m: icon(m.group(1), prefix), body)
     body = body.replace("{{PHONE}}", PHONE).replace("{{TEL}}", TEL)
+    by_slug = {p["slug"]: p for p in posts}
+
+    def postlink(m):
+        if m.group(1) not in by_slug:  # never link to a post that doesn't exist
+            raise SystemExit(f"{{{{postlink:{m.group(1)}}}}}: no such post")
+        p = by_slug[m.group(1)]
+        return f'<a href="{prefix}blog/{p["slug"]}.html">{p["title_h1"]}</a>'
+    body = re.sub(r"\{\{postlink:([\w-]+)\}\}", postlink, body)
     body = re.sub(r"\{\{related:(\w+)\}\}", lambda m: related_block(posts, prefix, m.group(1)), body)
     body = body.replace("{{latest_posts}}", related_block(posts, prefix, "__none__", "Latest advice"))
     if "{{post_list}}" in body:
@@ -337,9 +349,9 @@ def render(meta, posts):
         schemas.insert(0, {"@context": "https://schema.org", "@type": "Service", "name": s["name"],
                            "serviceType": s.get("type", s["name"]), "description": s["description"],
                            "url": DOMAIN + meta["url"], "provider": BUSINESS_REF,
-                           "areaServed": [{"@type": "Country", "name": "United Kingdom"},
-                                          {"@type": "Place", "name": "London"},
-                                          {"@type": "Place", "name": "Home Counties"}]})
+                           "areaServed": s.get("area") or [{"@type": "Country", "name": "United Kingdom"},
+                                                           {"@type": "Place", "name": "London"},
+                                                           {"@type": "Place", "name": "Home Counties"}]})
     body = expand(meta["body"], posts, prefix, meta)
     if meta.get("faq"):
         schemas.append(faq_schema(body))
@@ -427,9 +439,10 @@ def main():
         m["read"] = max(3, round(words / 220))
         m["crumbs"] = [["Home", "/"], ["Advice", "/blog/"], [m.get("crumb", m["title"]), m["url"]]]
         posts.append(m)
-    posts.sort(key=lambda p: p["date"], reverse=True)
+    posts.sort(key=lambda p: (p["date"], p.get("seq", 0)), reverse=True)
 
     pages = [parse(f) for f in sorted(SRC.glob("*.html"))]
+    pages += [parse(f) for f in sorted((SRC / "areas").glob("*.html"))]  # /areas/ hub + area pages
     built = []
     for m in pages:
         out = ROOT / m["out"]

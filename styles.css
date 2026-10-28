@@ -868,3 +868,11 @@ body.modal-open { overflow: hidden; }
 .prose--dark p { color: var(--muted-on-dark); }
 .prose--dark h2 { color: var(--white); }
 .prose--dark a { color: var(--white); }
+
+/* Area pages */
+.article .regions { padding-left: 0; margin-top: 16px; }
+.article .regions li + li { margin-top: 0; }
+.area-grid a .area-card__towns { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
+.regions a { color: inherit; text-decoration: none; }
+.regions a:hover, .regions a:focus-visible { text-decoration: underline; }
+.section--tight + .section--tight { padding-top: 0; }
